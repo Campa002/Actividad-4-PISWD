@@ -1,0 +1,168 @@
+/* ============================================================
+   base.css — Variables globales, reset y Foundation overrides
+   Archivo 1 de 5
+   ============================================================ */
+
+:root {
+    /* ─ Colores principales ─ */
+    --primary: #6C3CE1;
+    --primary-light: #8B5CF6;
+    --primary-dark: #5126B4;
+    --accent: #00E5FF;
+    --accent-glow: rgba(0, 229, 255, 0.4);
+    --neon-pink: #FF2D78;
+    --neon-green: #39FF14;
+
+    /* ─ Fondos (modo claro) ─ */
+    --bg-body: #F0F2F5;
+    --bg-surface: #FFFFFF;
+    --bg-surface-alt: #F8F9FA;
+    --bg-nav: rgba(255, 255, 255, 0.95);
+
+    /* ─ Texto ─ */
+    --text-primary: #1A1A2E;
+    --text-secondary: #6B7280;
+    --text-muted: #9CA3AF;
+
+    /* ─ Bordes y sombras ─ */
+    --border-color: #E5E7EB;
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.12);
+    --shadow-neon: 0 0 15px var(--accent-glow);
+
+    /* ─ Utilidades ─ */
+    --radius: 12px;
+    --radius-lg: 20px;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --font-main: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* ── Reset ─────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--bg-body);
+    color: var(--text-primary);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    transition: var(--transition);
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content {
+    flex: 1;
+}
+
+a {
+    color: var(--primary);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+a:hover {
+    color: var(--accent);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-main);
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+::selection {
+    background: var(--primary);
+    color: #fff;
+}
+
+/* ── Títulos de sección reutilizables ──────────────────── */
+.section-header {
+    margin-bottom: 3rem;
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.section-title i {
+    color: var(--accent);
+    filter: drop-shadow(0 0 4px var(--accent-glow));
+}
+
+.section-subtitle {
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+}
+
+/* ── Foundation CSS overrides ──────────────────────────── */
+.top-bar {
+    background: transparent;
+}
+
+.menu>li>a {
+    color: var(--text-secondary);
+}
+
+.menu .menu-text {
+    padding: 0.7rem 0;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    box-shadow: none;
+    height: auto;
+}
+
+.top {
+    color: black !important;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+    box-shadow: none;
+}
+
+/* ── Callouts Foundation ───────────────────────────────── */
+.callout {
+    border-radius: var(--radius);
+    font-family: var(--font-main);
+}
+
+.callout.alert {
+    background: rgba(255, 45, 120, 0.08);
+    border-color: var(--neon-pink);
+    color: var(--neon-pink);
+}
+
+.callout.success {
+    background: rgba(57, 255, 20, 0.08);
+    border-color: var(--neon-green);
+    color: #2d8a14;
+}
+
+grid-x>.large-5 {
+    width: 500px !important;
+}

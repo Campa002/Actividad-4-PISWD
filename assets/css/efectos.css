@@ -1,0 +1,223 @@
+/* ============================================================
+   efectos.css — Botones neon, animaciones, modo oscuro y responsive
+   Archivo 5 de 5
+   ============================================================ */
+
+/* ══════════════ BOTÓN NEON PRINCIPAL ═════════════════════ */
+.btn-neon {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: #fff !important;
+    border: none;
+    border-radius: 10px;
+    font-weight: 700;
+    font-family: var(--font-main);
+    font-size: 1rem;
+    padding: 0.85rem 2rem;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.btn-neon::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, var(--accent), var(--primary-light));
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.btn-neon:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px rgba(108, 60, 225, 0.4), 0 0 40px rgba(108, 60, 225, 0.2);
+    color: #fff !important;
+}
+
+.btn-neon:hover::before {
+    opacity: 1;
+}
+
+.btn-neon i,
+.btn-neon span {
+    position: relative;
+    z-index: 1;
+}
+
+/* Botón neon pequeño */
+.btn-neon-sm {
+    background: linear-gradient(135deg, var(--primary), var(--accent)) !important;
+    color: #fff !important;
+    border: none !important;
+    border-radius: 8px !important;
+    font-weight: 600 !important;
+    font-size: 0.85rem !important;
+    padding: 0.5rem 1rem !important;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn-neon-sm:hover {
+    box-shadow: 0 0 15px rgba(108, 60, 225, 0.4);
+    transform: translateY(-1px);
+    color: #fff !important;
+}
+
+/* ══════════════ ANIMACIONES ══════════════════════════════ */
+@keyframes neonPulse {
+
+    0%,
+    100% {
+        filter: drop-shadow(0 0 10px var(--accent-glow));
+    }
+
+    50% {
+        filter: drop-shadow(0 0 20px var(--accent-glow)) drop-shadow(0 0 40px var(--accent-glow));
+    }
+}
+
+.flash-message {
+    border-radius: var(--radius);
+    margin-top: 1rem;
+    animation: slideDown 0.4s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ══════════════ MODO OSCURO ═════════════════════════════ */
+body.dark-mode {
+    --bg-body: #0D0D1A;
+    --bg-surface: #161625;
+    --bg-surface-alt: #1C1C30;
+    --bg-nav: rgba(13, 13, 26, 0.95);
+    --text-primary: #E8E8F0;
+    --text-secondary: #9CA3B8;
+    --text-muted: #6B728A;
+    --border-color: #2A2A40;
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode .callout.success { color: var(--neon-green); }
+body.dark-mode .logo-text a { color: #fff !important; }
+
+body.dark-mode .site-footer {
+    background: #08081A;
+}
+
+body.dark-mode .dark-toggle {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+body.dark-mode .dark-toggle i::before {
+    content: "\f185";
+}
+
+body.dark-mode .form-group input {
+    background: var(--bg-surface-alt);
+    color: var(--text-primary);
+    border-color: var(--border-color);
+}
+
+body.dark-mode .form-group input:focus {
+    background: var(--bg-surface);
+}
+
+body.dark-mode .comentario-form .input-group-field {
+    background: var(--bg-surface-alt);
+    color: var(--text-primary);
+    border-color: var(--border-color);
+}
+
+body.dark-mode *,
+body.dark-mode *::before,
+body.dark-mode *::after {
+    transition: background-color 0.3s ease, color 0.3s ease,
+        border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* ══════════════ RESPONSIVE ══════════════════════════════ */
+@media screen and (max-width: 639px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--bg-nav);
+        border-top: 1px solid var(--border-color);
+        padding: 1rem;
+        box-shadow: var(--shadow-md);
+        z-index: 999;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li a {
+        padding: 0.75rem 1rem;
+        width: 100%;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .hero-section {
+        padding: 4rem 0 3rem;
+    }
+
+    .auth-card {
+        padding: 1.5rem;
+    }
+
+    .perfil-avatar {
+        width: 90px;
+        height: 90px;
+        font-size: 2.5rem;
+    }
+
+    .perfil-nombre {
+        font-size: 1.5rem;
+    }
+
+    .mapa-leaflet {
+        height: 350px;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (min-width: 640px) and (max-width: 1023px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .mapa-leaflet {
+        height: 420px;
+    }
+}
+
+grid-x>.large-5 {
+    width: 500px !important;
+}

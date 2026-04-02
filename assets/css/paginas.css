@@ -1,0 +1,314 @@
+/* ============================================================
+   paginas.css — Perfil de usuario y Mapa con Leaflet
+   Archivo 4 de 5
+   ============================================================ */
+
+/* ══════════════ PERFIL ═══════════════════════════════════ */
+.perfil-section {
+    padding: 3rem 0;
+}
+
+.perfil-header {
+    padding: 3rem 0;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.perfil-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    font-size: 3.5rem;
+    color: #fff;
+    box-shadow: 0 0 30px rgba(108, 60, 225, 0.3);
+    animation: avatarGlow 3s ease-in-out infinite;
+}
+
+@keyframes avatarGlow {
+
+    0%,
+    100% {
+        box-shadow: 0 0 30px rgba(108, 60, 225, 0.3);
+    }
+
+    50% {
+        box-shadow: 0 0 40px rgba(0, 229, 255, 0.4);
+    }
+}
+
+.perfil-nombre {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 0.25rem;
+}
+
+.perfil-email {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+}
+
+.perfil-bio {
+    color: var(--text-secondary);
+    font-style: italic;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* Estadísticas */
+.stats-row {
+    margin-bottom: 3rem;
+}
+
+.stat-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    padding: 2rem 1.5rem;
+    text-align: center;
+    transition: var(--transition);
+    box-shadow: var(--shadow-sm);
+}
+
+.stat-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--primary-light);
+}
+
+.stat-icon {
+    font-size: 2rem;
+    color: var(--primary);
+    margin-bottom: 0.75rem;
+}
+
+.stat-number {
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: 0.25rem;
+}
+
+.stat-label {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.perfil-seccion {
+    margin-bottom: 3rem;
+}
+
+/* Comentarios en perfil */
+.comentarios-perfil {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.comentario-perfil-item {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+    transition: var(--transition);
+}
+
+.comentario-perfil-item:hover {
+    border-color: var(--primary-light);
+}
+
+.comentario-evento-ref {
+    font-size: 0.85rem;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+.comentario-perfil-item p {
+    margin-bottom: 0.5rem;
+}
+
+/* ══════════════ MAPA ═════════════════════════════════════ */
+.mapa-section {
+    padding: 3rem 0;
+}
+
+.mapa-container {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 2px solid var(--border-color);
+    box-shadow: var(--shadow-lg);
+}
+
+.mapa-leaflet {
+    width: 100%;
+    height: 550px;
+    background: #1A1A2E;
+}
+
+.geo-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    margin-bottom: 1rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.geo-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.geo-status {
+    margin-bottom: 1rem;
+}
+
+.geo-loading {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.geo-loading i {
+    color: var(--accent);
+}
+
+.geo-coords {
+    margin-bottom: 1rem;
+}
+
+.coord-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 0.9rem;
+}
+
+.coord-label {
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.coord-value {
+    color: var(--accent);
+    font-weight: 700;
+    font-family: 'Courier New', monospace;
+}
+
+.geo-error {
+    color: var(--neon-pink);
+    font-size: 0.9rem;
+}
+
+/* Lista de eventos en panel lateral */
+.eventos-mapa-lista {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.evento-mapa-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: var(--transition);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.evento-mapa-item:last-child {
+    border-bottom: none;
+}
+
+.evento-mapa-item:hover {
+    background: rgba(108, 60, 225, 0.08);
+}
+
+.evento-mapa-item i {
+    color: var(--neon-pink);
+    font-size: 1.1rem;
+}
+
+.evento-mapa-item strong {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--text-primary);
+}
+
+.evento-mapa-item small {
+    color: var(--text-muted);
+    font-size: 0.78rem;
+}
+
+/* ── Marcadores Leaflet personalizados ─────────────────── */
+.marcador-evento,
+.marcador-usuario {
+    background: transparent !important;
+    border: none !important;
+}
+
+.marcador-pin {
+    width: 36px;
+    height: 36px;
+    background: linear-gradient(135deg, var(--primary), var(--neon-pink));
+    border-radius: 50% 50% 50% 0;
+    transform: rotate(-45deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px rgba(108, 60, 225, 0.5);
+}
+
+.marcador-pin i {
+    transform: rotate(45deg);
+    color: #fff;
+    font-size: 0.9rem;
+}
+
+.marcador-usuario-pin {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, var(--accent), var(--neon-green));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 15px var(--accent-glow);
+    animation: neonPulse 2s infinite;
+}
+
+.marcador-usuario-pin i {
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+/* Popup Leaflet */
+.popup-evento h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.popup-evento p {
+    font-size: 0.85rem;
+    margin: 0.25rem 0;
+    color: var(--text-secondary);
+}
+
+.popup-evento i {
+    color: var(--primary);
+    margin-right: 0.3rem;
+}
+
+grid-x>.large-5 {
+    width: 500px !important;
+}
