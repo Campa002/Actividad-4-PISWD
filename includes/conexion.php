@@ -11,7 +11,7 @@
 
 // ── Datos de conexión ──────────────────────────────────────
 define('DB_HOST', 'localhost');
-define('DB_NAME', 'actividad4');
+define('DB_NAME', 'eventhub');
 define('DB_USER', 'root');
 define('DB_PASS', '');           // XAMPP no tiene password por defecto
 define('DB_CHARSET', 'utf8mb4');

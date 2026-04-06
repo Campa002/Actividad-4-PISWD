@@ -166,3 +166,6 @@ input[type="password"]:focus {
 grid-x>.large-5 {
     width: 500px !important;
 }
+b, strong{
+    color: rgb(163, 125, 199) !important;
+}
